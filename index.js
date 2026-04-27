@@ -56,7 +56,7 @@ async function simulateHumanVisit() {
     try {
         // Quick IP Check before starting the traffic run
         console.log('Checking current IP address through the proxy...');
-        await page.goto('https://api.ipify.org', { waitUntil: 'domcontentloaded' });
+        await page.goto('https://api.ipify.org', { waitUntil: 'domcontentloaded', timeout: 60000 });
         const currentIP = await page.evaluate(() => document.body.innerText);
         console.log(`\n---> BROWSING FROM IP: ${currentIP} <---\n`);
         await randomDelay(2000, 3000);
@@ -65,7 +65,7 @@ async function simulateHumanVisit() {
         for (const [index, url] of TARGET_URLS.entries()) {
             console.log(`\n[Page ${index + 1}/${TARGET_URLS.length}] Navigating to ${url}...`);
             
-            await page.goto(url, { waitUntil: 'domcontentloaded' });
+            await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
 
             // Simulate human behavior on this specific page
             console.log('Reading top of page...');
