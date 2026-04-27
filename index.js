@@ -9,7 +9,9 @@ puppeteer.use(StealthPlugin());
 const TARGET_URLS = [
     'https://www.sezgindursun.com',
     'https://www.sezgindursun.com/hafta-hafta-gebelik-1-40/',
-    'https://www.sezgindursun.com/iletisim/' // Add as many as you want
+    'https://www.sezgindursun.com/iletisim/', // Add as many as you want
+    "https://www.sezgindursun.com/atasehir-infertilitede-tup-bebek-ivf-tedavisi/",
+    "https://www.sezgindursun.com/istanbul-infertilitede-tup-bebek-ivf-tedavisi/"
 ];
 
 // Helper function to create human-like random delays
